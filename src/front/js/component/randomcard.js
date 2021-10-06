@@ -16,17 +16,50 @@ export const RandomCard = () => {
 	let cardClass2 = suit[getRandomInt(0, suit.length - 1)];
 	let cardNumber2 = cardnumbers[getRandomInt(0, cardnumbers.length - 1)];
 	let winner = "";
-	if (cardClass1 == "spade") {
+
+	if (cardClass1 == "spade" && cardClass2 != "spade") {
+		winner = store.p1name;
+	} else if (cardClass2 == "spade" && cardClass1 != "spade") {
+		winner = store.p2name;
+	} else if (cardClass1 == "diamond" && cardClass2 != "diamond" && cardClass2 != "spade ") {
+		winner = store.p1name;
+	} else if (cardClass2 == "spade" && cardClass1 != "spade" && cardClass1 != "diamond") {
+		winner = store.p2name;
+	}
+	// p1 wins
+	else if (cardClass1 == "spade") {
 		if (cardClass2 != "spade") {
 			if (cardNumber1 > cardNumber2) {
-				winner = p1name + "has won!";
+				winner = store.p1name + " has won!";
+			}
+		}
+	} else if (cardClass1 == "diamond") {
+		if (cardClass2 != "diamond" && cardClass2 != "spade") {
+			if (cardNumber1 > cardNumber2) {
+				winner = store.p1name + " has won!";
 			}
 		}
 	}
+
+	// p2 wins
+	else if (cardClass2 == "spade") {
+		if (cardClass1 != "spade") {
+			if (cardNumber2 > cardNumber1) {
+				winner = store.p2name + " has won!";
+			}
+		}
+	} else if (cardClass2 == "diamond") {
+		if (cardClass1 != "diamond" && cardClass1 != "spade") {
+			if (cardNumber2 > cardNumber1) {
+				winner = store.p2name + " has won!";
+			}
+		}
+	}
+
 	return (
 		<div className="row">
 			<div className="col-12">
-				<h1>{winner + " won this round!"}</h1>
+				<h1>{winner + " !"}</h1>
 			</div>
 			<div className="row">
 				<div className="col">

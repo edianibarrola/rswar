@@ -7,8 +7,8 @@ import { Link, useParams } from "react-router-dom";
 
 export const Home = () => {
 	const { store, actions } = useContext(Context);
-	const [p1val, setP1Val] = useState("");
-	const [p2val, setP2Val] = useState("");
+	const [p1val, setP1Val] = useState("Player 1");
+	const [p2val, setP2Val] = useState("Player 2");
 	return (
 		<div className="text-center mt-5">
 			<h1>Its War Time</h1>
