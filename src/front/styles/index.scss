@@ -1,3 +1,88 @@
 /* 
     General Styles
 */
+.card {
+    background: white;
+    height: 350px;
+    width: 250px;
+    box-shadow: -2px 1px 0px black, -3px 2px 0px gray, -4px 3px 0px black,
+      -5px 4px 0px gray, -6px 5px 0px black, -7px 6px 0px gray, -8px 7px 0px black,
+      -9px 8px 0px gray, -10px 9px 0px black, -12px 11px 5px black;
+  }
+  .card::before,
+  .card::after {
+    font-size: 100px;
+    position: absolute;
+  }
+  .card::before {
+    top: -1.7rem;
+    left: 1.3rem;
+  }
+  .card::after {
+    bottom: -1.7rem;
+    right: 1.3rem;
+    transform: rotate(180deg);
+  }
+  .heart,
+  .diamond {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    content: "";
+  }
+  .heart h1 {
+    font-size: 5rem;
+    content: "";
+  }
+  .heart::before,
+  .heart::after {
+    content: "\2665";
+  }
+  
+  .diamond h1 {
+    font-size: 5rem;
+    content: "";
+  }
+  .diamond::before,
+  .diamond::after {
+    content: "\2666";
+  }
+  
+  .heart::before,
+  .heart::after,
+  .diamond::before,
+  .diamond::after {
+    color: red;
+  }
+  
+  .club,
+  .spade {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    content: "";
+  }
+  .club h1 {
+    font-size: 5rem;
+    content: "";
+  }
+  .club::before,
+  .club::after {
+    content: "\2663";
+  }
+  
+  .spade h1 {
+    font-size: 5rem;
+    content: "";
+  }
+  .spade::before,
+  .spade::after {
+    content: "\2660";
+  }
+  
+  .club::before,
+  .club::after,
+  .spade::before,
+  .spade::after {
+    color: grey;
+  }

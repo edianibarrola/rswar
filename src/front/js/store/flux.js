@@ -1,6 +1,10 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
+			p1name: "",
+			p2name: "",
+			suit: ["heart", "diamond", "club", "spade"],
+			cardnumbers: ["A", "1", "2", "3", "4"],
 			message: null,
 			demo: [
 				{
@@ -17,6 +21,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
+			setp1: name => {
+				setStore({ p1name: name });
+			},
+			setp2: name => {
+				setStore({ p2name: name });
+			},
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");
 			},
