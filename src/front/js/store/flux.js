@@ -3,7 +3,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 		store: {
 			p1name: "",
 			p2name: "",
-			suit: ["heart", "diamond", "club", "spade"],
+			suit: [1, 2, 3, 4],
 			cardnumbers: ["A", "1", "2", "3", "4"],
 			message: null,
 			demo: [
