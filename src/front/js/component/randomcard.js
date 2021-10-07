@@ -1,14 +1,16 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Context } from "../store/appContext";
 import { Link, useParams } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 export const RandomCard = () => {
 	const { store, actions } = useContext(Context);
 	const history = useHistory();
+	const [refresher, setRefresher] = useState(true);
 	const getRandomInt = (min, max) => {
 		return Math.floor(Math.random() * (max - min + 1)) + min;
 	};
-
+	store.p1name == "" ? actions.setp1("Player 1") : console.log(store.p1name);
+	store.p2name == "" ? actions.setp2("Player 2") : console.log(store.p2name);
 	let suit = store.suit;
 	let cardnumbers = store.cardnumbers;
 
@@ -52,7 +54,7 @@ export const RandomCard = () => {
 	}
 	let cardNumber2 = cardnumbers[getRandomInt(0, cardnumbers.length - 1)];
 
-	let winner = "it's a Tie!";
+	let winner = "";
 
 	if (cardClass1ID > cardClass2ID) {
 		winner = store.p1name + " has won!";
@@ -65,6 +67,8 @@ export const RandomCard = () => {
 			winner = "Wow! " + store.p1name + " has tied with " + store.p2name + "!";
 		}
 	} else if (cardClass2ID > cardClass1ID) {
+		winner = store.p2name + " has won!";
+	} else {
 		winner = store.p2name + " has won!";
 	}
 
@@ -114,22 +118,28 @@ export const RandomCard = () => {
 			</div>
 			<div className="row">
 				<div className="col">
-					<h1>{store.p1name}</h1>
+					<h1>{store.p1name ? store.p1name : "Player 1"}</h1>
 					<div className={"card " + cardClass1}>
 						<h1>{cardNumber1}</h1>
 					</div>
 				</div>
 
 				<div className="col">
-					<h1>{store.p2name}</h1>
+					<h1>{store.p2name ? store.p2name : "Player 2"}</h1>
 					<div className={"card " + cardClass2}>
 						<h1>{cardNumber2}</h1>
 					</div>
 				</div>
 				<div className="col-12">
-					<Link to="/">
-						<button>play again</button>
-					</Link>
+					{/* <Link to="/"> */}
+					<button
+						onClick={() => {
+							return setRefresher(!refresher);
+						}}>
+						{" "}
+						play again
+					</button>
+					{/* </Link> */}
 				</div>
 			</div>
 		</div>

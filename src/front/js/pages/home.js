@@ -7,8 +7,8 @@ import { Link, useParams } from "react-router-dom";
 
 export const Home = () => {
 	const { store, actions } = useContext(Context);
-	const [p1val, setP1Val] = useState("Player 1");
-	const [p2val, setP2Val] = useState("Player 2");
+	const [p1val, setP1Val] = useState("");
+	const [p2val, setP2Val] = useState("");
 	return (
 		<div className="text-center mt-5">
 			<h1>Its War Time</h1>
@@ -19,7 +19,7 @@ export const Home = () => {
 						type="text"
 						id="player1"
 						value={p1val}
-						placeholder="player 1"
+						placeholder="Player 1"
 						onChange={e => {
 							setP1Val(e.target.value);
 						}}
@@ -45,6 +45,15 @@ export const Home = () => {
 						Ready?
 					</button>
 				</Link>
+			</div>
+
+			<div className="row">
+				<div className="col-12">
+					<h1>How to play RS War</h1>
+					<p>Enter two names</p>
+					<p>The card with the higher suit wins</p>
+					<p>If both players have the same suit, the card with the highest number wins.</p>
+				</div>
 			</div>
 			<div className="alert alert-info">{store.message || "Loading message from the backend..."}</div>
 		</div>
