@@ -47,12 +47,13 @@ export const Home = () => {
 				</Link>
 			</div>
 
-			<div className="row">
+			<div className="row mt-5">
 				<div className="col-12">
 					<h1>How to play RS War</h1>
 					<p>Enter two names</p>
 					<p>The card with the higher suit wins</p>
 					<p>If both players have the same suit, the card with the highest number wins.</p>
+					<p>From low to high: Hearts Clubs Diamonds Spades</p>
 				</div>
 			</div>
 		</div>

@@ -4,7 +4,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			p1name: "",
 			p2name: "",
 			suit: [1, 2, 3, 4],
-			cardnumbers: ["A", "1", "2", "3", "4"],
+			cardnumbers: ["1", "2", "3", "4", "5", "6", "7", "8", "9"],
 			message: null,
 			demo: [
 				{
