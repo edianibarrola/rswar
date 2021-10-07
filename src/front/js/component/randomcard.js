@@ -112,27 +112,28 @@ export const RandomCard = () => {
 	// }
 
 	return (
-		<div className="row">
-			<div className="col-12">
-				<h1>{winner + " !"}</h1>
+		<div className="row mt-5">
+			<div className="col-12 text-center">
+				<h1>{winner}</h1>
 			</div>
 			<div className="row">
-				<div className="col">
-					<h1>{store.p1name ? store.p1name : "Player 1"}</h1>
+				<div className="col d-flex flex-column justify-content-center align-items-center">
+					<h2>{store.p1name ? store.p1name : "Player 1"}</h2>
 					<div className={"card " + cardClass1}>
 						<h1>{cardNumber1}</h1>
 					</div>
 				</div>
 
-				<div className="col">
-					<h1>{store.p2name ? store.p2name : "Player 2"}</h1>
+				<div className="col d-flex flex-column justify-content-center align-items-center">
+					<h2>{store.p2name ? store.p2name : "Player 2"}</h2>
 					<div className={"card " + cardClass2}>
 						<h1>{cardNumber2}</h1>
 					</div>
 				</div>
-				<div className="col-12">
+				<div className="col-12 d-flex flex-column justify-content-center align-items-center">
 					{/* <Link to="/"> */}
 					<button
+						className="btn btn-outline-primary"
 						onClick={() => {
 							return setRefresher(!refresher);
 						}}>

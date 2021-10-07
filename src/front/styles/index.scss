@@ -1,8 +1,17 @@
 /* 
     General Styles
 */
+
+@import url('https://fonts.googleapis.com/css2?family=Akronim&display=swap');
+
+body{
+  background: rgb(197, 197, 197);
+}
+.navbar{
+  background: rgb(177, 177, 177);
+}
 .card {
-    background: white;
+    background: rgb(255, 246, 217);
     height: 350px;
     width: 250px;
     box-shadow: -2px 1px 0px black, -3px 2px 0px gray, -4px 3px 0px black,
@@ -29,6 +38,7 @@
     align-items: center;
     justify-content: center;
     content: "";
+    color: rgb(189, 64, 64);
   }
   .heart h1 {
     font-size: 5rem;
@@ -52,7 +62,7 @@
   .heart::after,
   .diamond::before,
   .diamond::after {
-    color: red;
+    color: rgb(189, 64, 64);
   }
   
   .club,
@@ -84,5 +94,9 @@
   .club::after,
   .spade::before,
   .spade::after {
-    color: grey;
+    color: rgb(78, 78, 78);
+  }
+
+  h1{
+    font-family: 'Akronim', cursive;
   }

@@ -55,7 +55,6 @@ export const Home = () => {
 					<p>If both players have the same suit, the card with the highest number wins.</p>
 				</div>
 			</div>
-			<div className="alert alert-info">{store.message || "Loading message from the backend..."}</div>
 		</div>
 	);
 };
